@@ -28,6 +28,3 @@ steps:
     git remote set-url --push origin git@github.com:bansal28/bansalh28.github.io.git
     git push origin HEAD:master
   displayName: 'Publish GitHub Pages'
-  condition: |
-    and(not(eq(variables['Build.Reason'], 'PullRequest')),
-        eq(variables['Build.SourceBranch'], 'refs/heads/master'))

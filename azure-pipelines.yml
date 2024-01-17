@@ -8,6 +8,7 @@ pool:
 
 steps:
 - script: |
+    chmod +x ./docs.sh
     ./docs.sh
     git config --local user.name "Azure Pipelines"
     git config --local user.email "azuredevops@microsoft.com"
@@ -17,7 +18,7 @@ steps:
 
 - task: DownloadSecureFile@1
   inputs:
-    secureFile: id_rsa
+    secureFile: deploy_key
   displayName: 'Get the deploy key'
 
 - script: |

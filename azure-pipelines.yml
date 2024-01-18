@@ -1,7 +1,7 @@
 # Publish GitHub Pages
 
 trigger:
-- master
+- main  # Change this to the default branch name in your GitHub repository
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -25,7 +25,7 @@ steps:
     mkdir ~/.ssh && mv $DOWNLOADSECUREFILE_SECUREFILEPATH ~/.ssh/id_rsa
     chmod 700 ~/.ssh && chmod 600 ~/.ssh/id_rsa
     ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
-    git remote set-url --push origin git@github.com:bansal28/bansal28.github.io
+    git remote set-url --push origin git@github.com:bansal28/bansal28.github.io.git
     git stash
     git pull --rebase origin main  # Explicitly set pull.rebase to true
     git push origin HEAD:refs/heads/main

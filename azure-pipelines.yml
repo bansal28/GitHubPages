@@ -27,6 +27,6 @@ steps:
     ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
     git remote set-url --push origin git@github.com:bansal28/bansal28.github.io
     git stash
-    git pull origin main
+    git pull --rebase origin main  # Explicitly set pull.rebase to true
     git push origin HEAD:refs/heads/main
   displayName: 'Publish GitHub Pages'
